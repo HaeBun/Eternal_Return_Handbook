@@ -27,6 +27,7 @@ import static com.haebun.erhb.main.ServerData.SEASON_BANNER_URL;
 public class VersionPresenter {
     TextView version;
     ImageView patchNoteImageView;
+    ImageView patchNoteBannerImageView;
     Context context;
 
     public void setContext(Context context) {
@@ -39,6 +40,10 @@ public class VersionPresenter {
 
     public void setPatchNoteImageView(ImageView patchNoteImageView) {
         this.patchNoteImageView = patchNoteImageView;
+    }
+
+    public void setPatchNoteBannerImageView(ImageView patchNoteBannerImageView) {
+        this.patchNoteBannerImageView = patchNoteBannerImageView;
     }
 
     public void load() {
@@ -80,6 +85,24 @@ public class VersionPresenter {
                 }
             });
         }
+
+        if(patchNoteBannerImageView != null) {
+            Glide.with(context)
+                    .load(data.getPatchNoteBanner())
+                    .override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
+                    .into(patchNoteBannerImageView);
+
+            patchNoteBannerImageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(data.getPatchNote()));
+                    context.startActivity(intent);
+                }
+            });
+
+        }
+
         if(version != null) version.setText(data.getVersion());
     }
+
 }

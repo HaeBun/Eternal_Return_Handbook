@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.haebun.erhb.R;
 import com.haebun.erhb.service.promotion.PromotionPresenter;
+import com.haebun.erhb.service.reward.RewardPresenter;
 import com.haebun.erhb.service.season.SeasonPresenter;
 import com.haebun.erhb.service.version.VersionPresenter;
 
@@ -16,6 +17,8 @@ public class MainActivity extends FragmentActivity {
     PromotionPresenter promotion = new PromotionPresenter();
     SeasonPresenter season = new SeasonPresenter();
     VersionPresenter version = new VersionPresenter();
+    RewardPresenter reward = new RewardPresenter();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +26,11 @@ public class MainActivity extends FragmentActivity {
 
         ViewPager viewPager = findViewById(R.id.pager);
         ImageView banner = findViewById(R.id.banner);
-        ImageView patchNoteImage = findViewById(R.id.patchNoteImage);
+        ImageView patchNoteBanner = findViewById(R.id.patchNoteBanner);
+        ImageView reward_banner = findViewById(R.id.reward);
         TextView version = findViewById(R.id.version);
         TextView seasonEnds = findViewById(R.id.season_deadline);
+        TextView rewardDeadline = findViewById(R.id.reward_deadline);
 
         // 프로모션 presenter 연결
         promotion.setContext(this);
@@ -40,11 +45,16 @@ public class MainActivity extends FragmentActivity {
         // 버전 presenter 연결
         this.version.setContext(this);
         this.version.setVersionTextView(version);  // 버전 뷰 연결
-        this.version.setPatchNoteImageView(patchNoteImage); // 패치 노트 요약 뷰 연결
+//        this.version.setPatchNoteImageView(patchNoteImage); // 패치 노트 요약 뷰 연결
+        this.version.setPatchNoteBannerImageView(patchNoteBanner);
+
+        reward.setContext(this);
+        reward.setRewardImageView(reward_banner);
+        reward.setDeadlineTextView(rewardDeadline);
 
         promotion.load();   // 프로모션 로드
         season.load();      // 시즌 데이터 로드
         this.version.load(); // 버전 데이터 로드
+        reward.load();  // 보상 데이터 로드
     }
-
 }
