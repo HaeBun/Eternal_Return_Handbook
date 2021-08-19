@@ -1,7 +1,6 @@
 package com.haebun.erhb.service.promotion;
 
 import android.content.Context;
-import android.util.Log;
 
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
@@ -17,7 +16,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static com.haebun.erhb.activity.ServerData.REQUEST_PROMOTION_LIST;
+import static com.haebun.erhb.main.ServerData.REQUEST_PROMOTION_LIST;
 
 public class PromotionPresenter {
     private Context context;
@@ -25,7 +24,7 @@ public class PromotionPresenter {
     ViewPager viewPager;
     FragmentManager fm;
 
-    public void setView(Context context) {
+    public void setContext(Context context) {
         this.context = context;
     }
 
@@ -37,7 +36,7 @@ public class PromotionPresenter {
         this.viewPager = viewPager;
     }
 
-    public void loadData() {
+    public void load() {
         RequestQueue queue = Volley.newRequestQueue(context);
         adapter = new PromotionAdapter(fm);
 
@@ -46,25 +45,23 @@ public class PromotionPresenter {
             public void onResponse(String response) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
-                    LoadPromotion(jsonObject);
+                    loadPromotion(jsonObject);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
 
-            private void LoadPromotion(JSONObject jsonObject) {
+            private void loadPromotion(JSONObject jsonObject) {
                 try {
                     JSONArray jsonArray = jsonObject.getJSONArray("promotion");
 
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject item = jsonArray.getJSONObject(i);
-
                         PromotionData data = new PromotionData(item);
 
                         PromotionFragment fragment = new PromotionFragment(data);
                         adapter.addItem(fragment);
                     }
-
                     viewPager.setAdapter(adapter);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -73,7 +70,6 @@ public class PromotionPresenter {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.d("VOLLEYLOG", error.getMessage());
             }
         });
         queue.add(stringRequest);
