@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.Target;
 import com.haebun.erhb.R;
-import com.haebun.erhb.activity.ServerData;
+import com.haebun.erhb.main.ServerData;
 
 public class PromotionFragment extends Fragment {
 
