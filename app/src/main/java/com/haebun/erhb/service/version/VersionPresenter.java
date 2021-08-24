@@ -15,14 +15,11 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.Target;
-import com.haebun.erhb.service.season.SeasonData;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import static com.haebun.erhb.main.ServerData.REQUEST_SEASON_DATA;
 import static com.haebun.erhb.main.ServerData.REQUEST_VERSION_DATA;
-import static com.haebun.erhb.main.ServerData.SEASON_BANNER_URL;
 
 public class VersionPresenter {
     TextView version;

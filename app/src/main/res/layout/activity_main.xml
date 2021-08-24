@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,116 +7,268 @@
     android:background="@color/signature"
     tools:context=".main.MainActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <FrameLayout
+        android:layout_height="wrap_content">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/banner"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:layout_marginBottom="7dp"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/banner"/>
-
-            <TextView
-                android:id="@+id/version"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/mint"
-                android:layout_marginLeft="5dp"
-                android:textSize="7pt"
-                android:text="0.38.0"/>
-
-            <TextView
-                android:id="@+id/season_deadline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right|bottom"
-                android:layout_marginBottom="5dp"
-                android:layout_marginRight="5dp"
-                android:textColor="@color/white"
-                android:textSize="7pt"
-                android:text="시즌 마감 : 72일 7시"/>
-        </FrameLayout>
-
-        <LinearLayout
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/pager"
-                android:layout_width="wrap_content"
-                android:layout_height="250dp"
-                android:layout_below="@id/textView" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:weightSum="2">
-            
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="패치노트"
-                    android:textSize="10pt"
-                    android:textColor="@color/white"/>
+                android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/patchNoteBanner"
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_marginBottom="7dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/banner"/>
+
+                <TextView
+                    android:id="@+id/version"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop" />
-            </LinearLayout>
+                    android:textColor="@color/mint"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="7pt"
+                    tools:text="0.38.0"/>
+
+                <TextView
+                    android:id="@+id/season_deadline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|bottom"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="7pt"
+                    tools:text="시즌 마감 : 72일 7시"/>
+            </FrameLayout>
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="보상"
-                    android:textSize="10pt"
-                    android:textColor="@color/white"/>
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <FrameLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/pager"
+                        android:layout_width="wrap_content"
+                        android:layout_height="250dp"
+                        android:layout_below="@id/textView" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#40000000"
+                        android:layout_margin="10dp"
+                        android:text=" 1/7 "
+                        android:gravity="center"
+                        android:layout_gravity="right"
+                        android:textColor="@color/white"/>
+
                     <ImageView
-                        android:id="@+id/reward"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:alpha="0.5"
+                        android:src="@drawable/left"
+                        android:layout_marginLeft="5dp"
+                        android:layout_gravity="center|left"/>
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:alpha="0.5"
+                        android:src="@drawable/right"
+                        android:layout_marginRight="5dp"
+                        android:layout_gravity="center|right"/>
+
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="패치노트"
+                        android:textSize="10pt"
+                        android:textColor="@color/white"/>
+
+                    <ImageView
+                        android:id="@+id/patchNoteBanner"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop" />
+                </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
                     <TextView
-                        android:id="@+id/reward_deadline"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="#40000000"
-                        android:textColor="@color/white"
-                        android:layout_gravity="bottom|right"/>
-                </FrameLayout>
-            </LinearLayout>
-        </LinearLayout>
+                        android:text="보상"
+                        android:textSize="10pt"
+                        android:textColor="@color/white"/>
 
-    </LinearLayout>
-</ScrollView>
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/reward"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerCrop" />
+
+                        <TextView
+                            android:id="@+id/reward_deadline"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|right"
+                            android:background="#40000000"
+                            android:textColor="@color/white" />
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#30d6842c"
+                        android:layout_weight="1">
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:backgroundTint="#212121"
+                            android:textColor="#c9c9c9">
+                            <TextView
+                                android:id="@+id/subject"
+                                android:layout_width="100dp"
+                                android:layout_height="35dp"
+                                android:text="실험체"
+                                android:gravity="center"
+                                android:textColor="#c9c9c9"/>
+                        </LinearLayout>
+                        <View
+                            android:layout_width="100dp"
+                            android:layout_height="5dp"
+                            android:background="#d6842c"
+                            android:layout_gravity="bottom"/>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:backgroundTint="#212121"
+                            android:textColor="#c9c9c9">
+                            <TextView
+                                android:id="@+id/item"
+                                android:layout_width="100dp"
+                                android:layout_height="35dp"
+                                android:text="아이템"
+                                android:gravity="center"
+                                android:textColor="#c9c9c9"/>
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:layout_gravity="bottom"
+                            android:background="#3b3a36" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:backgroundTint="#212121"
+                            android:textColor="#c9c9c9">
+                            <TextView
+                                android:id="@+id/map"
+                                android:layout_width="100dp"
+                                android:layout_height="35dp"
+                                android:text="맵"
+                                android:gravity="center"
+                                android:textColor="#c9c9c9"/>
+                        </LinearLayout>
+                        <View
+                            android:layout_width="100dp"
+                            android:layout_height="5dp"
+                            android:layout_gravity="bottom"
+                            android:background="#3b3a36"/>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:backgroundTint="#212121"
+                            android:textColor="#c9c9c9">
+                            <TextView
+                                android:id="@+id/search"
+                                android:layout_width="100dp"
+                                android:layout_height="35dp"
+                                android:text="전적검색"
+                                android:gravity="center"
+                                android:textColor="#c9c9c9"/>
+                        </LinearLayout>
+                        <View
+                            android:layout_width="100dp"
+                            android:layout_height="5dp"
+                            android:layout_gravity="bottom"
+                            android:background="#3b3a36"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <FrameLayout
+                    android:id="@+id/information"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </ScrollView>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

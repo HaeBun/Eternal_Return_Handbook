@@ -15,6 +15,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -68,6 +69,7 @@ public class SeasonPresenter {
         if(banner != null) {
             Glide.with(context)
                     .load(SEASON_BANNER_URL+ data.getImage())
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(banner);
 
             banner.setOnClickListener(new View.OnClickListener() {

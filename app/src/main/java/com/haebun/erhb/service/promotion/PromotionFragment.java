@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.Target;
 import com.haebun.erhb.R;
 import com.haebun.erhb.main.ServerData;
@@ -37,6 +38,7 @@ public class PromotionFragment extends Fragment {
 
         Glide.with(getContext())
                 .load(ServerData.PROMOTION_IMAGE_URL+data.getImage())
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
                 .into(image);
 

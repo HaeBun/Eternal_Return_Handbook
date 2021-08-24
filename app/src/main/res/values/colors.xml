@@ -10,4 +10,8 @@
     <color name="signature">#1B2024</color>
     <color name="dark">#212121</color>
     <color name="mint">#73ccc2</color>
+    <color name="selectbackground">#30d6842c</color>
+    <color name="defaultbackground">#00000000</color>
+    <color name="defaultBar">#c9c9c9</color>
+    <color name="selectBar">#d6842c</color>
 </resources>

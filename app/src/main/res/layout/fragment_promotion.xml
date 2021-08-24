@@ -14,8 +14,7 @@
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:layout_gravity="center"
-            android:src="@drawable/event1"/>
+            android:layout_gravity="center" />
 
         <TextView
             android:id="@+id/promotion_title"

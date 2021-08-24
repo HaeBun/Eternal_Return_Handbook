@@ -1,6 +1,7 @@
 package com.haebun.erhb.service.promotion;
 
 import android.content.Context;
+import android.widget.TextView;
 
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
@@ -23,6 +24,9 @@ public class PromotionPresenter {
     PromotionAdapter adapter;
     ViewPager viewPager;
     FragmentManager fm;
+    TextView pages;
+
+    public void setPages(TextView pages) { this.pages = pages; }
 
     public void setContext(Context context) {
         this.context = context;
