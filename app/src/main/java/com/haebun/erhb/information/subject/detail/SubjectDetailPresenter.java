@@ -1,21 +1,17 @@
-package com.haebun.erhb.information.subject;
+package com.haebun.erhb.information.subject.detail;
 
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-
 import org.json.JSONObject;
 
-import static com.haebun.erhb.main.ServerData.SUBJECT_IMAGE_DIRECTORY;
-
-public class SubjectPresenter {
-    private SubjectData data;
+public class SubjectDetailPresenter {
+    private SubjectDetailData data;
     private TextView name_kor;
     private ImageView profile;
 
-    public SubjectPresenter(JSONObject subject) throws Exception {
-        this.data = new SubjectData(subject);
+    public SubjectDetailPresenter(JSONObject subject) throws Exception {
+        this.data = new SubjectDetailData(subject);
     }
 
     public void setNameTextView(TextView name) {

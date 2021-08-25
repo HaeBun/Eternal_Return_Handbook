@@ -16,10 +16,11 @@ public class SubjectListFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_subject, container, false);
-        presenter = new SubjectListPresenter();
+        View view = inflater.inflate(R.layout.fragment_subject_list, container, false);
+        presenter = new SubjectListPresenter(view);
         presenter.load();
 
         return view;
     }
+
 }

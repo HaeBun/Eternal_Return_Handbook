@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -13,6 +14,7 @@ import com.haebun.erhb.R;
 import com.haebun.erhb.information.item.ItemListFragment;
 import com.haebun.erhb.information.subject.list.SubjectListFragment;
 import com.haebun.erhb.main.MainActivity;
+import com.haebun.erhb.search.SearchFragment;
 
 public class NavigationPresenter {
     Context context;
@@ -21,6 +23,8 @@ public class NavigationPresenter {
     TextView map;
     TextView search;
     FrameLayout frameLayout;
+
+    private Fragment subjectFragment, itemFragment, searchFragment;
 
     public void setFrameLayout(FrameLayout frameLayout) {
         this.frameLayout = frameLayout;
@@ -69,12 +73,16 @@ public class NavigationPresenter {
         FragmentTransaction tran = fm.beginTransaction();
 
         if(view.equals(subject)) {
-            SubjectListFragment fragment = new SubjectListFragment();
-            tran.replace(frameLayout.getId(), fragment).commit();
+            subjectFragment = new SubjectListFragment();
+            tran.replace(frameLayout.getId(), subjectFragment).commit();
         }
         else if(view.equals(item)) {
-            ItemListFragment fragment = new ItemListFragment(R.layout.fragment_item_info);
-            tran.replace(frameLayout.getId(), fragment).commit();
+            itemFragment = new ItemListFragment(R.layout.fragment_item_info);
+            tran.replace(frameLayout.getId(), itemFragment).commit();
+        }
+        else if(view.equals(search)) {
+            searchFragment = new SearchFragment(R.layout.fragment_search_dak_gg);
+            tran.replace(frameLayout.getId(), searchFragment).commit();
         }
     }
 

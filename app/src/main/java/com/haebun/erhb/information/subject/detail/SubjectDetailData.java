@@ -1,8 +1,8 @@
-package com.haebun.erhb.information.subject;
+package com.haebun.erhb.information.subject.detail;
 
 import org.json.JSONObject;
 
-public class SubjectData {
+public class SubjectDetailData {
     private String name;
     private String real_name;
     private String name_kor;
@@ -13,7 +13,7 @@ public class SubjectData {
     private String job;
     private String battle_type;
 
-    public SubjectData(JSONObject item) throws Exception {
+    public SubjectDetailData(JSONObject item) throws Exception {
         this.name = item.getString("name");
         this.real_name = item.getString("real_name");
         this.name_kor = item.getString("name_kor");

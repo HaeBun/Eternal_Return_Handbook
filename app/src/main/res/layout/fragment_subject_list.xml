@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/subject_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -131,6 +132,7 @@
                         android:textColor="@color/white" />
                 </FrameLayout>
             </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -1134,6 +1136,7 @@
             android:weightSum="3">
 
             <LinearLayout
+                android:id="@+id/sua"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -1172,6 +1175,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/leon"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -1209,6 +1213,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/eleven"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
@@ -1255,7 +1260,7 @@
             android:weightSum="3">
 
             <LinearLayout
-                android:id="@+id/sua"
+                android:id="@+id/rio"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
